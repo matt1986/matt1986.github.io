@@ -674,7 +674,7 @@
         if (typeof module != 'undefined' && module.exports) module.exports = LatLon; // ≡ export default LatLon
     </script>
     <script type="text/javascript">
-        function test2() {
+        function start() {
             // calculate distance, bearing, mid-point
             //if(navigator.geolocation)
             //{
@@ -748,116 +748,160 @@
         }
     </script>
     <style type="text/css">
+        table.mainPOI td {
+            width: 1px;
+            white-space:nowrap;
+        }
+        table.secondaryPOI td {
+            width: 1px;
+            white-space:nowrap;
+        }
+
+        /* .mainContainer */
+            table.mainContainer {
+                width: 100%;
+            }
+
         /* .mainPOI */
+            div.mainPOIContainer {
+                width: 60%;
+                margin: auto;
+            }
+
             /* POI name */
             table.mainPOI tr:nth-child(1) td {
-
+                font-size: 30px;
+                margin: auto;
+                text-align: center;
             }
 
             /* Bearing */
             table.mainPOI tr:nth-child(2) td {
-
+                font-size: 50px;
+                margin: auto;
+                text-align: center;
             }
 
             /* Distance */
             table.mainPOI tr:nth-child(3) td {
-
+                font-size: 25px;
+                margin: auto;
+                text-align: center;
             }
 
         /* secondaryPOI */
+            div.secondaryPOIContainer {
+                width: 40%;
+                margin: auto;
+            }
+
             /* POI name */
             table.secondaryPOI tr:nth-child(1) td:nth-child(1) {
-
+                font-size: 20px;
+                margin: auto;
+                text-align: center;
             }
 
             /* Bearing */
             table.secondaryPOI tr:nth-child(1) td:nth-child(2) {
-
+                font-size: 25px;
+                margin: auto;
+                text-align: center;
             }
 
             /* Distance */
             table.secondaryPOI tr:nth-child(2) td {
-
+                font-size: 20px;
+                margin: auto;
+                text-align: center;
             }
     </style>
 </head>
 <body>
-    <input type="button" name="" valur="first get" onclick="test2();"><br>
-    <table>
+    <input type="button" name="" valur="first get" onclick="start();"><br>
+    <table class="mainContainer">
         <tr>
             <td rowspan="3"> <!-- main POI -->
-                <table id=mainPOI>
-                    <tr>
-                        <td id="mainPOIName">  <!-- POI name -->
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="mainPOIBearing"> <!-- Bearing -->
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="mainPOIDistance"> <!-- Distance -->
-                            
-                        </td>
-                    </tr>
-                </table>
+                <div class="mainPOIContainer">
+                    <table class="mainPOI" id="mainPOI">
+                        <tr>
+                            <td id="mainPOIName">  <!-- POI name -->
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="mainPOIBearing"> <!-- Bearing -->
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="mainPOIDistance"> <!-- Distance -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
             <td> <!-- 1st secondary POI -->
-                <table id=POI1>
-                    <tr>
-                        <td id="POI1Name" rowspan="2"> <!-- POI name -->
-                            
-                        </td>
-                        <td id="POI1Bearing"> <!-- Bearing -->
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="POI1Distance"> <!-- Distance -->
-                            
-                        </td>
-                    </tr>
-                </table>
+                <div class="secondaryPOIContainer">
+                    <table class="secondaryPOI" id=POI1>
+                        <tr>
+                            <td id="POI1Name" rowspan="2"> <!-- POI name -->
+                                
+                            </td>
+                            <td id="POI1Bearing"> <!-- Bearing -->
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="POI1Distance"> <!-- Distance -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
         </tr>
         <tr>
             <td> <!-- 2nd secondary POI -->
-                <table id=POI2>
-                    <tr>
-                        <td id="POI2Name" rowspan="2"> <!-- POI name -->
-                            
-                        </td>
-                        <td id="POI2Bearing"> <!-- Bearing -->
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="POI2Distance"> <!-- Distance -->
-                            
-                        </td>
-                    </tr>
-                </table>
+                <div class="secondaryPOIContainer">
+                    <table class="secondaryPOI" id=POI2>
+                        <tr>
+                            <td id="POI2Name" rowspan="2"> <!-- POI name -->
+                                
+                            </td>
+                            <td id="POI2Bearing"> <!-- Bearing -->
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="POI2Distance"> <!-- Distance -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
         </tr>
         <tr>
             <td> <!-- 3rd secondary POI -->
-                <table id=POI3>
-                    <tr>
-                        <td id="POI3Name" rowspan="2"> <!-- POI name -->
-                            
-                        </td>
-                        <td id="POI3Bearing"> <!-- Bearing -->
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="POI3Distance"> <!-- Distance -->
-                            
-                        </td>
-                    </tr>
-                </table>
+                <div class="secondaryPOIContainer">
+                    <table class="secondaryPOI" id=POI3>
+                        <tr>
+                            <td id="POI3Name" rowspan="2"> <!-- POI name -->
+                                
+                            </td>
+                            <td id="POI3Bearing"> <!-- Bearing -->
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="POI3Distance"> <!-- Distance -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
         </tr>
     </table>
