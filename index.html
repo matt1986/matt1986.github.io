@@ -674,6 +674,8 @@
         if (typeof module != 'undefined' && module.exports) module.exports = LatLon; // ≡ export default LatLon
     </script>
     <script type="text/javascript">
+        document.onload = start();
+
         function start() {
             // calculate distance, bearing, mid-point
             //if(navigator.geolocation)
@@ -759,7 +761,9 @@
 
         /* .mainContainer */
             table.mainContainer {
-                width: 100%;
+                width: 99vw;
+                height: 95vh;
+                font-size: 30px;
             }
 
         /* .mainPOI */
@@ -770,21 +774,21 @@
 
             /* POI name */
             table.mainPOI tr:nth-child(1) td {
-                font-size: 30px;
+                font-size: 3em;
                 margin: auto;
                 text-align: center;
             }
 
             /* Bearing */
             table.mainPOI tr:nth-child(2) td {
-                font-size: 50px;
+                font-size: 5em;
                 margin: auto;
                 text-align: center;
             }
 
             /* Distance */
             table.mainPOI tr:nth-child(3) td {
-                font-size: 25px;
+                font-size: 3em;
                 margin: auto;
                 text-align: center;
             }
@@ -797,28 +801,27 @@
 
             /* POI name */
             table.secondaryPOI tr:nth-child(1) td:nth-child(1) {
-                font-size: 20px;
+                font-size: 1em;
                 margin: auto;
                 text-align: center;
             }
 
             /* Bearing */
             table.secondaryPOI tr:nth-child(1) td:nth-child(2) {
-                font-size: 25px;
+                font-size: 2em;
                 margin: auto;
                 text-align: center;
             }
 
             /* Distance */
             table.secondaryPOI tr:nth-child(2) td {
-                font-size: 20px;
+                font-size: 1em;
                 margin: auto;
                 text-align: center;
             }
     </style>
 </head>
 <body>
-    <input type="button" name="" valur="first get" onclick="start();"><br>
     <table class="mainContainer">
         <tr>
             <td rowspan="3"> <!-- main POI -->
