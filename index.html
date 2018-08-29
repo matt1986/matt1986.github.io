@@ -677,45 +677,48 @@
         document.onload = start();
 
         function start() {
-            // calculate distance, bearing, mid-point
-            //if(navigator.geolocation)
-            //{
-                var POIs = [
-                    {
-                        "id":"SS4", //St-Dominique
-                        "lat":45.631882,
-                        "lon":-72.819300
-                    },
-                    {
-                        "id":"CSU3", //St-Hyacinthe
-                        "lat":45.606583,
-                        "lon":-73.015046
-                    },
-                    {
-                        "id":"CSC3", //Drummond
-                        "lat":45.845825,
-                        "lon":-72.394858
-                    },
-                    {
-                        "id":"CZBM", //Granby
-                        "lat":45.290719,
-                        "lon":-72.742181
-                    }
-                ];
-                updateView(POIs);
-            //}
-
+            updateView();
         }
-        function updateView(POIs) {
+
+        function updateView() {
+            console.log("refresh");
             /*
                 var brng2 = gps.finalBearingTo(SS4);
                 var pMid = gps.midpointTo(SS4);
             */
+            var POIs = [
+                {
+                    "id":"SS4", //St-Dominique
+                    "lat":45.631882,
+                    "lon":-72.819300
+                },
+                {
+                    "id":"CSU3", //St-Hyacinthe
+                    "lat":45.606583,
+                    "lon":-73.015046
+                },
+                {
+                    "id":"CSC3", //Drummond
+                    "lat":45.845825,
+                    "lon":-72.394858
+                },
+                {
+                    "id":"CZBM", //Granby
+                    "lat":45.290719,
+                    "lon":-72.742181
+                },
+                {
+                    "id":"Home", //Home
+                    "lat":45.548999,
+                    "lon":-73.651374
+                }
+            ];
+            var timeout = 0;
             navigator.geolocation.getCurrentPosition(function(position)
             {
                 var gps = LatLon(position.coords.latitude, position.coords.longitude);
 
-                var SS4 = LatLon(POIs[0].lat, POIs[0].lon);
+                var SS4 = LatLon(POIs[4].lat, POIs[4].lon);
                 var SS4brng = gps.bearingTo(SS4);
                 var SS4dist = Math.round(gps.distanceTo(SS4));
 
@@ -747,6 +750,7 @@
                 $("#POI3Bearing").text(("000" + Math.round(CZBMbrng)).slice(-3) + "°");
                 $("#POI3Distance").text((CZBMdist/1000).toFixed(1) + "km");
             });
+            setTimeout(updateView, 5000);
         }
     </script>
     <style type="text/css">
@@ -760,7 +764,7 @@
             white-space:nowrap;
             border-collapse: collapse;
             
-            border: 1px solid black;
+            /*border: 1px solid black;*/
         }
 
         /* .mainContainer */
@@ -770,7 +774,7 @@
                 font-size: 30px;
                 border-collapse: collapse;
 
-                border: 1px solid black;
+                /*border: 1px solid black;*/
             }
 
         /* .mainPOI */
