@@ -718,7 +718,7 @@
             {
                 var gps = LatLon(position.coords.latitude, position.coords.longitude);
 
-                var SS4 = LatLon(POIs[4].lat, POIs[4].lon);
+                var SS4 = LatLon(POIs[0].lat, POIs[0].lon);
                 var SS4brng = gps.bearingTo(SS4);
                 var SS4dist = Math.round(gps.distanceTo(SS4));
 
